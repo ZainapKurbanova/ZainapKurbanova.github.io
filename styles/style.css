@@ -1,0 +1,182 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    display: flex; 
+    flex-direction: column; 
+}
+
+main {
+    background-color: #edf3f8;
+    padding: 50px 70px;
+    margin-top: 0;
+    flex: 1;
+}
+
+header {
+    padding: 5px 70px;
+    background-color: #0D6EFD;
+    margin: 0;
+}
+
+h1 {
+    color: white !important;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+form {
+    width: 450px;
+    height: 150px;
+    background-color: #FFFFFF;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.form-label {
+    font-size: 24px;
+    color: #212529;
+    margin-bottom: 0;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.form-row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #CED4DA;
+    border-radius: 4px;
+    font-size: 1rem;
+    outline: none;
+}
+
+input[type="text"]::placeholder {
+    color: #6C757D;
+}
+
+button.btn-primary {
+    padding: 6px 20px;
+    border: none;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.backlog .btn-primary {
+    --bg-color: #CED4DA;
+    --text-color: #6C757D;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.backlog .btn-primary:hover,
+.backlog .btn-primary:active {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.in-progress .btn-primary {
+    --bg-color: #c1dbf7;
+    --text-color: #0D6EFD;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.in-progress .btn-primary:hover,
+.in-progress .btn-primary:active {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.done .btn-primary {
+    --bg-color: #c8f8d9;
+    --text-color: #4cb069;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.done .btn-primary:hover,
+.done .btn-primary:active {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.trash .btn-primary {
+    --bg-color: #f8c1c1;
+    --text-color: #bf4e4e;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.trash .btn-primary:hover,
+.trash .btn-primary:active {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.tasks {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.task {
+    flex: 1;
+    padding: 10px;
+}
+
+.task-list {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; 
+}
+
+.task-item {
+    padding: 10px;
+    background-color: #FFFFFF;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid; 
+}
+
+.backlog .task-item {
+    border-left-color: #CED4DA; 
+}
+
+.in-progress .task-item {
+    border-left-color: #c1dbf7; 
+}
+
+.done .task-item {
+    border-left-color: #c8f8d9;
+}
+
+.trash .task-item {
+    border-left-color: #f8c1c1; 
+}
+
+.clear-btn .btn-primary {
+    box-shadow: none;
+    border-left: none; 
+    text-align: center; 
+    width: 100%; 
+    background-color: #b25757;
+    color:#FFFFFF;
+}
+.clear-btn .btn-primary:hover,
+.clear-btn .btn-primary:active {
+    background-color: #b25757;
+    color: #FFFFFF;
+}
