@@ -71,54 +71,40 @@ button.btn-primary {
     font-size: 18px;
 }
 
-.backlog .btn-primary {
+.task-header {
+    padding: 6px 20px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    width: fit-content; 
+    margin: 0; 
+}
+
+.backlog .task-header {
     --bg-color: #CED4DA;
     --text-color: #6C757D;
     background-color: var(--bg-color);
     color: var(--text-color);
 }
 
-.backlog .btn-primary:hover,
-.backlog .btn-primary:active {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-}
-
-.in-progress .btn-primary {
+.in-progress .task-header {
     --bg-color: #c1dbf7;
     --text-color: #0D6EFD;
     background-color: var(--bg-color);
     color: var(--text-color);
 }
 
-.in-progress .btn-primary:hover,
-.in-progress .btn-primary:active {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-}
-
-.done .btn-primary {
+.done .task-header {
     --bg-color: #c8f8d9;
     --text-color: #4cb069;
     background-color: var(--bg-color);
     color: var(--text-color);
 }
 
-.done .btn-primary:hover,
-.done .btn-primary:active {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-}
-
-.trash .btn-primary {
+.trash .task-header {
     --bg-color: #f8c1c1;
     --text-color: #bf4e4e;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-}
-
-.trash .btn-primary:hover,
-.trash .btn-primary:active {
     background-color: var(--bg-color);
     color: var(--text-color);
 }
@@ -133,17 +119,20 @@ button.btn-primary {
 
 .task {
     flex: 1;
-    padding: 10px;
+    padding: 10px 0;
 }
 
 .task-list {
-    margin-top: 10px;
+    padding-left: 0;
+    margin: 10px 10px 10px 0;
     display: flex;
     flex-direction: column;
     gap: 10px; 
+    list-style: none;
 }
 
 .task-item {
+    margin-left: 0;
     padding: 10px;
     background-color: #FFFFFF;
     border-radius: 4px;
@@ -173,8 +162,9 @@ button.btn-primary {
     text-align: center; 
     width: 100%; 
     background-color: #b25757;
-    color:#FFFFFF;
+    color: #FFFFFF;
 }
+
 .clear-btn .btn-primary:hover,
 .clear-btn .btn-primary:active {
     background-color: #b25757;
