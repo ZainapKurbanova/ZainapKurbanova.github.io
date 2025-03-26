@@ -3,16 +3,17 @@ body {
     min-height: 100vh;
     display: flex; 
     flex-direction: column; 
+    background-color: #edf3f8;
 }
 
-main {
+.task-app-content {
     background-color: #edf3f8;
     padding: 50px 70px;
     margin-top: 0;
     flex: 1;
 }
 
-header {
+.task-app-header {
     padding: 5px 70px;
     background-color: #0D6EFD;
     margin: 0;
@@ -22,6 +23,7 @@ h1 {
     color: white !important;
     font-size: 2rem;
     font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 form {
