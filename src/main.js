@@ -1,28 +1,31 @@
 import HeaderComponent from './view/header-component.js';
 import FormAddTaskComponent from './view/form-add-task-component.js';
 import TaskBoardComponent from './view/taskboard-component.js';
-import TaskListComponent from './view/task-list-component.js';
-import TaskComponent from './view/task-component.js';
 import { render, RenderPosition } from './framework/render.js';
+import TasksBoardPresenter from './presenter/tasks-board-presenter.js';
+import TasksModel from './model/task-model.js';
 
-const bodyContainer = document.querySelector('.board-app');
+const bodyContainer = document.querySelector('body'); 
 const formContainer = document.querySelector('.task-app-content');
-
-render(new HeaderComponent(), bodyContainer, RenderPosition.AFTERBEGIN);
-render(new FormAddTaskComponent(), formContainer);
-
 const board = new TaskBoardComponent();
-render(board, formContainer);
+const tasksModel = new TasksModel();
 
-for (let i = 0; i < 4; i++) {
-    const taskListComponent = new TaskListComponent(
-      `Название блока`, 
-      'backlog'
-    );
-    render(taskListComponent, board.getElement().querySelector('.tasks'));
-  
-    for (let j = 0; j < 3; j++) {
-      const taskComponent = new TaskComponent(`Название первой задачи`);
-      render(taskComponent, taskListComponent.getElement().querySelector('.task-list'));
-    }
-  }
+const appContainer = document.createElement('div');
+appContainer.className = 'app-container';
+bodyContainer.appendChild(appContainer);
+
+const header = new HeaderComponent();
+render(header, appContainer);
+
+const content = document.createElement('section');
+content.className = 'task-app-content';
+appContainer.appendChild(content);
+
+render(new FormAddTaskComponent(), content);
+render(board, content);
+
+const tasksBoardPresenter = new TasksBoardPresenter({
+  boardContainer: board.getElement(),
+  tasksModel: tasksModel
+});
+tasksBoardPresenter.init();
