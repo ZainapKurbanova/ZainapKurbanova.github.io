@@ -1,16 +1,15 @@
 import {  AbstractComponent } from '../framework/view/abstract-component.js';
 
-function createTaskTemplate(task) {
-  return `<li class="task-item">${task.title}</li>`;
+function createHeaderComponentTemplate() {
+    return (
+          `<header class="task-app-header">
+            <h1>Список задач</h1>
+          </header>`
+      );
 }
 
-export default class TaskComponent extends AbstractComponent {
-  constructor(task) {
-    super();
-    this._task = task;
-  }
-
+export default class HeaderComponent extends AbstractComponent {
   get template() {
-    return createTaskTemplate(this._task);
+    return createHeaderComponentTemplate();
   }
 }
