@@ -173,3 +173,13 @@ button.btn-primary {
     background-color: #b25757;
     color: #FFFFFF;
 }
+
+.empty-task-list {
+    background-color: #edf3f8; 
+    padding: 10px;
+    border: 1px dashed #6C757D; 
+    border-radius: 8px;
+    color: #6C757D;
+    font-size: 16px; 
+}
+  
