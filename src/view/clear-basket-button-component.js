@@ -1,4 +1,4 @@
-import { createElement } from '../framework/render.js';
+import {  AbstractComponent } from '../framework/view/abstract-component.js';
 
 function createClearBasketButtonTemplate() {
   return `
@@ -8,15 +8,8 @@ function createClearBasketButtonTemplate() {
   `;
 }
 
-export default class ClearBasketButtonComponent {
-  getTemplate() {
+export default class ClearBasketButtonComponent extends AbstractComponent {
+  get template() {
     return createClearBasketButtonTemplate();
-  }
-
-  getElement() {
-    if (!this.element) {
-      this.element = createElement(this.getTemplate());
-    }
-    return this.element;
   }
 }
