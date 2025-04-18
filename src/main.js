@@ -19,7 +19,14 @@ const content = document.createElement('section');
 content.className = 'task-app-content';
 appContainer.appendChild(content);
 
-render(new FormAddTaskComponent(), content);
+const formAddTaskComponent = new FormAddTaskComponent({
+  onClick: handleNewTaskButtonClick
+});
+
+function handleNewTaskButtonClick() {
+  tasksBoardPresenter.createTask();
+}
+render(formAddTaskComponent, content);
 
 const boardComponent = new TaskBoardComponent();
 render(boardComponent, content);
