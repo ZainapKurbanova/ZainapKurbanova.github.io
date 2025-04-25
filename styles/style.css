@@ -182,4 +182,32 @@ button.btn-primary {
     color: #6C757D;
     font-size: 16px; 
 }
-  
+.task-item.dragging {
+  opacity: 0.5;
+}
+
+.task-item.drop-target {
+  position: relative;
+}
+
+.task-item.drop-target[data-insert-position="before"]::before {
+  content: '';
+  display: block;
+  height: 2px;
+  background: #007bff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.task-item.drop-target[data-insert-position="after"]::after {
+  content: '';
+  display: block;
+  height: 2px;
+  background: #007bff;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
