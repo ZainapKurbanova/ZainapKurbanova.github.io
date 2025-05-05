@@ -4,9 +4,13 @@ import TaskBoardComponent from './view/taskboard-component.js';
 import { render } from './framework/render.js';
 import TasksBoardPresenter from './presenter/tasks-board-presenter.js';
 import TasksModel from './model/task-model.js';
+import TasksApiService from './tasks-api-service.js';
 
+const END_POINT = 'https://6818911a5a4b07b9d1cfc51e.mockapi.io';
 const bodyContainer = document.querySelector('body'); 
-const tasksModel = new TasksModel();
+const tasksModel = new TasksModel({
+  tasksApiService: new TasksApiService(END_POINT)
+});
 
 const appContainer = document.createElement('div');
 appContainer.className = 'app-container';
