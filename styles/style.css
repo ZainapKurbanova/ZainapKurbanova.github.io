@@ -8,7 +8,7 @@ body {
 
 .task-app-content {
     background-color: #edf3f8;
-    padding: 50px 70px;
+    padding: 0px 70px;
     margin-top: 0;
     flex: 1;
 }
@@ -36,6 +36,7 @@ form {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    margin-top: 50px;
     margin-bottom: 20px;
 }
 
@@ -172,3 +173,73 @@ button.btn-primary {
     background-color: #b25757;
     color: #FFFFFF;
 }
+
+.empty-task-list {
+    background-color: #edf3f8; 
+    padding: 10px;
+    border: 1px dashed #6C757D; 
+    border-radius: 8px;
+    color: #6C757D;
+    font-size: 16px; 
+}
+.task-item.dragging {
+  opacity: 0.5;
+}
+
+.task-item.drop-target {
+  position: relative;
+}
+
+.task-item.drop-target[data-insert-position="before"]::before {
+  content: '';
+  display: block;
+  height: 2px;
+  background: #007bff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.task-item.drop-target[data-insert-position="after"]::after {
+  content: '';
+  display: block;
+  height: 2px;
+  background: #007bff;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.board__no-tasks {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; 
+    font-size: 20px;
+    font-weight: 400;
+    color: #333; 
+    padding: 15px;
+    background-color: #fff; 
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+.board__no-tasks::before {
+    content: '';
+    width: 16px;
+    height: 16px;
+    border: 2px solid #ccc; 
+    border-top: 2px solid #4c6953;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite; 
+}
+  
+@keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+}
+  
+ 
