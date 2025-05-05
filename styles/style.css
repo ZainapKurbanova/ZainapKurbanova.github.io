@@ -211,3 +211,35 @@ button.btn-primary {
   left: 0;
   right: 0;
 }
+
+.board__no-tasks {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; 
+    font-size: 20px;
+    font-weight: 400;
+    color: #333; 
+    padding: 15px;
+    background-color: #fff; 
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+.board__no-tasks::before {
+    content: '';
+    width: 16px;
+    height: 16px;
+    border: 2px solid #ccc; 
+    border-top: 2px solid #4c6953;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite; 
+}
+  
+@keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+}
+  
+ 
